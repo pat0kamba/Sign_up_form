@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+   rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
+   crossorigin="anonymous">
+  <link rel="stylesheet" href="style.css">
+  <title>Sign Up form</title>
+</head>
+<body>
+  <div class="container">
+  <div class="head-container">
+    <div class="head-img">
+      <img src="./images/form.png" class="letter-img" alt="letter-img">
+    </div>
+    <div class="head-intro">
+    <h1>EMAIL SIGN UP FORM</h1>
+    <p>We would love to be in touch with you! Sign up
+    to receive emails from us!
+    </p>
+    </div>
+  </div>
+  <hr>
+  <div class="form-body">
+  <p>Please complete all information below</p>
+  <form action="/" method='POST'>
+    <label for="greeting">Title</label><br>
+    <input list="salut" name='salutations' id='salutations'><br>
+    <datalist id='salut'>
+      <option value="Mr.">
+      <option value="Mrs.">
+      <option value="Snr">
+      <option value="Jr">
+      <option value="The first">
+      <option value='The second'>
+    </datalist>
+    <div class="names">
+      <div class="first-name">
+        <label for="name" >First Name: <span id='required'>*</span></label><br> <input type="text" id='fname_box' name='fname'  >
+      </div>
+      <div class="last-name">
+        <label for="name">Last Name: <span id='required'>*</span></label><br> <input type="text" name='lname' id='lname_box'>
+      </div>
+
+    </div>
+    <div class="contact">
+      <div class="email-pg">
+        <label for="email">E-mail: <span id='required'>*</span></label><br> <input type="email" name='email' id='email'>
+      </div>
+      <div class="phone-pg">
+        <label for="name">Phone  </label><br><input type="tel" name='tel_number' id='tel-number' placeholder='(000) 000-000'>
+      </div>
+    </div>
+    <label for="address">Address: <span id='required'>*</span></label><br>
+    <input type="text" name='address_1' id='address-1'><br>
+    <label for="s-address" class='text-muted' id='reduce'>Street Address</label><br>
+    <br>
+    <input type="text" name='address_2' id='address-2'><br>
+    <label for="s-address-2" class='text-muted' id='reduce'>Street Address Line 2</label>
+    <div class="location">
+      <div class="city-pg">
+        <input type="text" name='city' id='city'><br>
+        <label for="city" class='text-muted' id='reduce'>City</label>
+      </div>
+      <div class="state-pg">
+        <input type="text" name='state' id="state"><br>
+        <label for="state" class='text-muted' id='reduce'>State / Province</label>
+      </div>
+    </div>
+    <input type="text" name='zip' id="zip"><br>
+    <label for="zip" class='text-muted' id='reduce'> Postal / Zip Code</label>
+    <br>
+    <br>
+    <p>Comments, Questions or Suggestions</p>
+    <textarea name="comment" id="comment" cols="30" rows="10" placeholder='Type here...'></textarea>
+  <hr>
+
+  <input type="submit" value='Submit' name='submit' id='submit'>
+  </form>
+
+  </div>
+</div>
+
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+
+integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+</body>
+</html>

@@ -1,0 +1,68 @@
+.names, .contact, .location,.head-container{
+  display:flex;
+  gap:20px;
+}
+
+.container{
+  width:70%;
+  margin:auto;
+  background-color:#F9D371;
+  padding:30px;
+  border-radius:5px;
+}
+.head-img, .head-intro,.first-name, .last-name,.email-pg,.phone-pg,.city-pg,.state-pg{
+  width:50%;
+  padding:10px 0;
+}
+.letter-img{
+  width:50%;
+}
+.head-img{
+  text-align:center;
+  padding:35px 0;
+}
+#comment,#zip,#city,#state,#address-2, #address-1,#salutations,#fname_box,#lname_box,
+#email,#tel-number{
+  width:100%;
+  border-radius:5px;
+  margin:10px 0 5px 0;
+}
+
+
+#salutations{
+  width:48.5%;
+  margin:10px 0;
+}
+#zip,#city,#state,#address-2, #address-1,#fname, #lname,#email,#tel-number, #salutations{
+  height:30px;
+}
+#submit{
+  position:relative;
+  left:50%;
+  transform:translateX(-50%);
+  margin-top:20px;
+  width:100px;
+  padding:10px;
+}
+#required{
+  color:red;
+}
+#reduce{
+  font-size:12px;
+
+}
+
+@media only screen and (max-width:767px){
+  .names, .contact, .location,.head-container{
+    display:block;
+  }
+  .head-img, .head-intro,.first-name, .last-name,.email-pg,.phone-pg,.city-pg,.state-pg{
+    width:100%;
+  }
+  #salutations{
+    width:100%;
+  }
+  .letter-img{
+    width:60%;
+  }
+}
