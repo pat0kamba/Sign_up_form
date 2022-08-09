@@ -1,7 +1,9 @@
+require('dotenv').config();
 const express = require('express');
 const bodyParser = require('body-parser');
 const https = require('https');
 const app = express();
+const port = process.env.PORT || 3000;
 
 app.use(express.static('public'));
 app.use(bodyParser.urlencoded({extended:true}));
@@ -11,18 +13,8 @@ app.get('/',(req,res)=>{
 })
 
 app.post('/',(req,res)=>{
-  const fname = req.body.fname;
-  const lname = req.body.lname;
-  const email = req.body.email;
-  const number = req.body.tel_number;
-  const address_street = req.body.address_1;
-  const address_apt = req.body.address_2;
-  const city = req.body.city;
-  const state = req.body.state;
-  const zip = req.body.zip;
-  const comment = req.body.comment;
-  const prefix = req.body.salutations;
-
+  const {fname, lname, email, number, address_1, address_2,
+        city, state, zip, comment, salutations} = req.body;
   const data ={
     members:[
       {
@@ -33,10 +25,10 @@ app.post('/',(req,res)=>{
           LNAME:lname,
           COMMENT:comment,
           PHONE:number,
-          PFX:prefix,
+          PFX:salutations,
           ADDRESS:{
-            addr1:address_street,
-            addr2:address_apt,
+            addr1:address_1,
+            addr2:address_2,
             city:city,
             state:state,
             zip:zip
@@ -49,10 +41,10 @@ app.post('/',(req,res)=>{
   }
 
   const jsdata = JSON.stringify(data);
-  const url = "https://us20.api.mailchimp.com/3.0/lists/51fa3d1d9d";
+  const url = `https://us20.api.mailchimp.com/3.0/lists/${process.env.Audience_api}`;
   const options = {
     method:'POST',
-    auth:'patrick:85bda23a487ffc04cfc99801c996e5ac-us20'
+    auth:`patrick:${process.env.Api}`
   };
 
   const request1 = https.request(url,options,(response)=>{
@@ -77,12 +69,8 @@ app.post('/success', (req,res)=>{
 app.post('/failure', (req,res)=>{
   res.redirect('/')
 })
-// Api : 85bda23a487ffc04cfc99801c996e5ac-us20
-// Audience: 51fa3d1d9d
 
 
-
-
-app.listen(process.env.PORT || 3000, ()=>{
-  console.log('we are running on server 3000');
+app.listen(port, ()=>{
+  console.log(`The server is running on port ${port}`);
 })
